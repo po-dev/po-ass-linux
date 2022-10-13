@@ -51,6 +51,8 @@ fdt set /chosen/module@0 bootargs "console=hvc0 ro root=/dev/mmcblk0p1 rootwait 
 
 setenv bootargs "console=dtuart dtuart=/soc/serial@5000000 root=/dev/mmcblk0p1 rootwait dom0_mem=128M"
 
-booti /${xen_addr_r} - ${fdt_addr}
+booti (dollar sign){xen_addr_r} - ${fdt_addr}
+
+replace (dollar sign) with a $, formatting's borked
 
 Gives a "Could not set up DOM0 guest OS" error here, but that's due to a lack of further setup.
